@@ -6,41 +6,40 @@ const UserSchema = new mongoose.Schema(
             type: String,
             required: true,
             min: 2,
-            max: 50
+            max: 50,
         },
         lastName: {
             type: String,
             required: true,
             min: 2,
-            max: 50
+            max: 50,
         },
         email: {
             type: String,
             required: true,
+            max: 50,
             unique: true,
-            max: 50
         },
         password: {
             type: String,
             required: true,
-            unique: true,
-            min: 5
+            min: 5,
         },
         picturePath: {
             type: String,
-            default: " ",
+            default: "",
         },
         friends: {
             type: Array,
-            default: []
+            default: [],
         },
         location: String,
         occupation: String,
         viewedProfile: Number,
-        impressions: Number
-    }, { timestamps: true }
+        impressions: Number,
+    },
+    { timestamps: true }
 );
 
-const User = mongoose.model("User", UserSchema)
-
+const User = mongoose.model("User", UserSchema);
 export default User;
