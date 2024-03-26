@@ -20,8 +20,8 @@ const PostWidget = ({
     location,
     picturePath,
     userPicturePath,
-    likes,
-    comments,
+    likes = {},
+    comments = {},
 }) => {
     const [isComments, setIsComments] = useState(false);
     const dispatch = useDispatch();
